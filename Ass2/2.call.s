@@ -1,0 +1,8 @@
+.pos 0x100
+irmovq $0x200, %rdx   # %rdx = 0x200
+call (%rdx)
+irmovq $0xabcd, %rsi  # %rsi = 0xabcd
+
+.pos 0x200
+irmovq $0xff, %rdx    # %rdx = 0xff
+ret

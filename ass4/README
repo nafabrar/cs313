@@ -1,0 +1,162 @@
+
+Name:Nafis Abrar
+ID:58068131
+Name:Name:Klaus Marte 
+ID:21415054
+
+Time it took:5 hours
+
+2a)Miss-rate is 12.5%:
+This is because the array is accessed in row-major order.The first miss,which causes the 12.5%, is due to cold-miss.So the first attempt will cold-miss and the next 7 long in the array will be accessed i.e hit. 
+
+
+
+b)Miss-rate is 100%:
+This is because of column-major order.Every access will be a cache-miss due to column-major order accessing.In C the cache stores arrays in row-major order.
+
+
+
+
+
+c)Miss-rate is 50%
+This is because though the loop is accessing the array in column-major order but its incrementing by 2.It misses first and then have a cache-hit.It keeps on repeating this pattern.
+
+
+
+
+
+
+d)Miss-rate is 100%:Same as b
+This is because the  array is being accessed by column major order. The two way set associative does not help the miss rate due to the column-major order accessing.
+
+
+	
+
+e)Miss-rate is 12.5%:
+This is because the the array is being accessed by column major order.The -4 way set-associative decreases the miss rate.
+
+
+
+
+f)Miss-rate is 12.5%:
+This is because the the array is being accessed by column major order.Changing the array size does not decrease miss rate.Sum is 68160 because some elements in the array are not accessed because the column is 120 instead of 128.Therefore the sum decreases to 68160.
+
+Mark Scheme
+
+
+
+
+  Question 1: [ 13/16]
+  ----------
+
+    Function cache_line_is_valid_and_both_tags_match [ /1]
+
+        0.5 mark for checking the valid bit
+
+
+        0.5 mark for checking the tag
+
+
+    Function cache_line_retrieve_data [ /1.5]
+
+        0.5 mark for using the offset correctly
+
+
+        1 mark for retrieving a 4 byte integer (not only a single byte)
+
+
+    Function cache_set_find_matching_line [ /4]
+
+        1 mark for looping through the cache lines in the set
+
+
+
+        1 mark for checking tags and validity of each 
+
+
+
+        1 mark for calling cache_line_make_mru as appropriate
+
+
+
+        1 mark for the correct return values
+
+
+
+
+    Function find_available_cache_line [ 1/4]
+
+        1 mark for looping through the cache lines in the set
+
+
+
+        1 mark for returning an invalid cache line if one exists
+            You returned a valid cache line unfortunately
+
+
+        1 mark for returning the least recently used line if all are valid
+
+
+
+        1 mark for calling cache_line_make_mru as appropriate
+
+
+
+    Function cache_read [ /4.5]
+
+        1 mark for extracting the tag, set index and cache block offsets
+
+
+
+        1 mark for handling the case where the data is in the cache
+
+
+
+        2 marks for the case where the data is not already in the cache
+
+
+
+        0.5 mark for updating access_count and miss_count
+
+
+
+    Comments and style [  /1]
+
+
+
+
+  Question 2: [8.5/18]
+  ----------
+        Give 3 marks for each correct explanation, and part marks where appropriate.
+	
+
+        4x128 array, sumA and a direct-mapped cache: [2/3]
+
+
+
+        4x128 array, sumB and a direct-mapped cache: [1/3]
+        
+
+
+
+        4x128 array, sumC and a direct-mapped cache: [2/3]
+
+
+
+        4x128 array, sumB and a two-way set associative cache: [2/3]
+
+
+
+        4x128 array, sumB and a four-way set associative cache: [1.5/3]
+
+
+
+        4x120 array, sumB and a direct-mapped cache: [0/3]
+
+
+
+  How long it took them to do the assignment: [1/1]
+  ------------------------------------------
+
+
+
